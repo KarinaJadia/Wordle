@@ -4,7 +4,9 @@ public class Main {
         Scanner input = new Scanner(System.in); // creates a scanner object
         Word word = new Word(); // creates wordle guess word object
         Guess guess = new Guess(); // creates user guess
-        Dictionary dictionary = new Dictionary(); // creates the dictionary
+        Dictionary dictionary = new Dictionary("words"); // creates the dictionary
+        dictionary.initialize();
+        dictionary.printAllWords();
 
         System.out.println("Please input the word to guess:");
         word.setWord(input.next().toUpperCase()); // takes user input and sets word
