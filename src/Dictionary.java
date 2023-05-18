@@ -4,12 +4,9 @@ import java.util.TreeSet;
 
 public class Dictionary {
     public TreeSet<String> words; // the data structure used to store my dictionary
-    String path = "";
     public Dictionary (String filename) {
         words = new TreeSet<>();
-        path = "/Users/karin/IdeaProjects/Wordle/src/" + filename + ".txt";
-    }
-    public void initialize () {
+        String path = "/Users/karin/IdeaProjects/Wordle/src/" + filename + ".txt";
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line;
             while ((line = reader.readLine()) != null) {
