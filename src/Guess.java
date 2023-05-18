@@ -7,7 +7,7 @@ public class Guess {
         attempts = 0;
     }
     public void setGuess (String guess) {
-        this.guess = guess.toUpperCase();
+        this.guess = guess.toLowerCase();
 
     }
     public String getGuess () {

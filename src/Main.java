@@ -7,7 +7,7 @@ public class Main {
         Dictionary dictionary = new Dictionary("words"); // creates the dictionary
 
         System.out.println("Please input the word to guess:");
-        word.setWord(input.next().toUpperCase()); // takes user input and sets word
+        word.setWord(input.next().toLowerCase()); // takes user input and sets word
         guess.setWo(word.getWord()); // same user input for the guess class, kind of redundant but whatevs
         System.out.println("Please input how many guesses the player will get:");
         guess.setAttempts(Integer.parseInt(input.next())); // converts user input to int and takes it
@@ -29,7 +29,7 @@ public class Main {
                     System.out.println("Please input a guess " + word.getLength() + " characters long. Your guess was " + guess.getGuess().length() + " letters.");
                     guess.setGuess(input.next());
                 }
-            } // end if the guess isn't the correct length
+            }
             if (guess.test().equals(word.getWord())) {
                 guess.setAttempts(0);
                 win = true;

@@ -17,6 +17,9 @@ public class Dictionary {
             e.printStackTrace();
         }
     }
+    public boolean containsWord(String word) {
+        return words.contains(word);
+    }
     public void printAllWords() {
         for (String word : words) {
             System.out.println(word);
