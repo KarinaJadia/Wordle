@@ -25,12 +25,12 @@ public class Guess {
     public void subtract () {
         attempts --;
     }
-    public String test () {
+    public String test () { // checks if every single letter is correct?? there must be a better way
         String it = "";
         for (int i = 0; i < word.length(); i++) {
-            if (guess.substring(i, i+1).equals((word.substring(i, i+1)))) {
+            if (guess.substring(i, i + 1).equals((word.substring(i, i + 1)))) {
                 it = it + guess.charAt(i);
-            } else if (word.contains(guess.substring(i,i+1))) {
+            } else if (word.contains(guess.substring(i, i + 1))) {
                 it = it + "*";
             } else {
                 it = it + "-";

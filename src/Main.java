@@ -8,9 +8,17 @@ public class Main {
 
         System.out.println("Please input the word to guess:");
         word.setWord(input.next().toLowerCase()); // takes user input and sets word
+        if (!dictionary.real(word.getWord())) {
+            while (!dictionary.real(word.getWord())) {
+                System.out.println("That word isn't in the dictionary. Please input another word.");
+                word.setWord(input.next().toLowerCase()); // takes user input and sets word
+            }
+        }
         guess.setWo(word.getWord()); // same user input for the guess class, kind of redundant but whatevs
         System.out.println("Please input how many guesses the player will get:");
         guess.setAttempts(Integer.parseInt(input.next())); // converts user input to int and takes it
+        System.out.println("Does the player need to guess dictionary words? y/n");
+        dictionary.setAllowed(input.next());
 
         System.out.println("\n\n\n\n\n\n\nRules:");
         System.out.println("You have " + guess.getAttempts() + " attempts to guess the word.");
@@ -28,6 +36,12 @@ public class Main {
                 while (guess.getGuess().length() != word.getLength()) {
                     System.out.println("Please input a guess " + word.getLength() + " characters long. Your guess was " + guess.getGuess().length() + " letters.");
                     guess.setGuess(input.next());
+                }
+            }
+            if (!dictionary.real(guess.getGuess())) { // if guess isn't in dictionary
+                while (!dictionary.real(guess.getGuess())) {
+                    System.out.println("That word isn't in the dictionary. Please guess another word.");
+                    guess.setGuess(input.next()); // takes user input and checks word
                 }
             }
             if (guess.test().equals(word.getWord())) {
